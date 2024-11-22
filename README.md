@@ -1,32 +1,31 @@
 # Implementation of JLox
 
-Following the book **Crafting Interpreters**. This is the `Java` implemetation 😄
+Following the book [**Crafting Interpreters**](https://craftinginterpreters.com/).
 
-## References
-1. [github/java/com/craftinginterpreters](https://github.com/munificent/craftinginterpreters/tree/master/java/com/craftinginterpreters)
-2. [Crafting Interpreters](https://craftinginterpreters.com/)
+This contains the `Java` and `C` implemetations as well as answers to the challenges presented at the end of each chatper 😄
 
-## License
-[LICENSE](LICENSE)
-* For more information and additional commentary from the original Author please read [craftinginterpreters/LICENSE](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE)
+## Java
 
-## VSCode Generated
+### Prerequisites
 
-### Getting Started
+* Made using [VSCode Extensions](https://marketplace.cursorapi.com/items?itemName=vscjava.vscode-java-pack)
+* I am on macOS, so I installed `openjdk` through `brew install openjdk`.
+* It is then linked through `CMD+Shift+P > Download, install and use JDK`.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-### Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Compiling
+* Compiled output files will be generated in the `bin` folder by default. This is in the `.gitignore`.
 
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
 ### Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## References
+1. [github](https://github.com/munificent/craftinginterpreters/)
+2. [Crafting Interpreters](https://craftinginterpreters.com/)
+
+## License
+[LICENSE](LICENSE)
+* For more information and additional commentary from the original Author please read [craftinginterpreters/LICENSE](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE)
