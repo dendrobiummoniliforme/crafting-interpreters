@@ -1,4 +1,4 @@
-# Implementation of JLox
+# Implementation of JLox / Clox
 
 Following the book [**Crafting Interpreters**](https://craftinginterpreters.com/).
 
