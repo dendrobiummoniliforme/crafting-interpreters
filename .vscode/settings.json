@@ -1,5 +1,5 @@
 {
-    "java.project.sourcePaths": ["java"],
+    "java.project.sourcePaths": ["java", "challenges/Chapter_01"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "java/lib/**/*.jar"
