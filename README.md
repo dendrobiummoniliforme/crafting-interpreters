@@ -2,7 +2,7 @@
 
 Following the book [**Crafting Interpreters**](https://craftinginterpreters.com/).
 
-This contains the `Java` and `C` implemetations as well as answers to the challenges presented at the end of each chatper 😄
+This contains the `Java` and `C` implemetations as well as answers to the challenges presented at the end of each chapter 😄
 
 ## Java
 
@@ -21,6 +21,19 @@ This contains the `Java` and `C` implemetations as well as answers to the challe
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
+## C
+
+### Prerequisites
+* macOS comes with `clang` through `xcode`. Otherwise, choose a compiler of choice.
+* I am using `Apple clang version 16.0.0 (clang-1600.0.26.4)`.
+
+### Compiling
+* `gcc -o bin/<name_of_binary> <path_of_source>/<name_of_file>.c`.
+* This is so we do not upload random binaries, `.gitignore` ignores `bin/`
+* Example `gcc -o bin/challenge challenges/Chapter_01/C/challenge.c`
+
+### Running
+* `./bin/<name_of_binary>`
 
 ## References
 1. [github](https://github.com/munificent/craftinginterpreters/)
