@@ -51,7 +51,7 @@ class Scanner {
     }
 
     private void scanToken() {
-        char c = advance();
+        char c = advance(); // c is now the current character.
 
         // TODO Language Server wants me to use a
         // `rule switch` instead.
@@ -81,15 +81,40 @@ class Scanner {
             case '>': 
                 addToken(match('=') ? GREATER_EQUAL : GREATER);
                 break;
-            case '/':
+            case '/': 
+                if (match('*')) {
+                    boolean exit = false;
+                    do {
+                        if (!isAtEnd()) {
+                            // Consume and Increment current by one
+                            if (advance() == '*' && !isAtEnd()) {
+                                // currentChar is *
+                                // Consume and Increment current by one
+                                if (advance() == '/') {
+                                    // currentChar is /
+                                    exit = true;
+                                }
+                            }
+                        }
+                        if (isAtEnd()) {
+                            exit = true;
+                        }
+                    } while (exit != true);
+
+                    // Exit early to prevent the other match from activating post-comment.
+                    // There is likely a cleaner way to handle this so we only have one break.
+                    break;
+                }
+
                 if (match('/')) {
-                    // A comment goes until the end of the line.
+                    // Check if the next character is a newline or a newline.
                     while (peek() != '\n' && !isAtEnd()) {
                         advance();
                     }
                 } else {
                     addToken(SLASH);
                 }
+
                 break;
             // Whitespace Tokens.
             case ' ':
@@ -107,6 +132,7 @@ class Scanner {
                 if (match('r')) {
                     addToken(OR);
                 }
+                break;
             default:
                 // Check for a digit in the default case.
                 if (isDigit(c)) {
@@ -246,11 +272,19 @@ class Scanner {
         return current >= source.length();
     }
 
+    private boolean isAtEndPeekNext() {
+        int next = current + 2;
+        return next >= source.length();
+    }
+
     /**
      * Move along the array of chars by 1.
-     * @return char - the next char.
+     * @return char - the current char.
      */
     private char advance() {
+        // This says:
+        //   * Evaluate charAt(current)
+        //   * Increment current to be current + 1.
         return source.charAt(current++);
     }
 
