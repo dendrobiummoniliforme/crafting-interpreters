@@ -13,6 +13,20 @@ For C we have macros. Specifically
 
 This is further discussed in https://mailund.dk/posts/macro-metaprogramming/.
 
+For `CoffeeScript` I found https://www.reddit.com/r/Compilers/comments/1b6u8yx/question_how_does_spaces_affect_code_is_parsed_in/ which is directly related to this question. It's possible that https://stackoverflow.com/questions/9014970/why-does-coffeescript-require-whitespace-after-map represents the parsing of spaces in `CoffeeScript` where
+
+```CoffeeScript
+nums = [1..10].map (i) -> i*2 => nums = [1..10].map((i) -> i*2) // [0]
+```
+
+is parsed differently from
+
+```CoffeeScript
+nums = [1..10].map(i) -> i*2 => nums = [1..10].map(i)(-> i*2) // [1]
+```
+
+then, we can see that `[0]` behaves like a `JavaScript` `closure` and `[1]` behaves like a callback or more explicitly `map(i) = map(() -> i*2)` where `i` is a `function` with `signature` `() -> i*2`.
+
 ## Our scanner here, like most, discards comments and whitespace since those aren’t needed by the parser. Why might you want to write a scanner that does not discard those? What would it be useful for?
 
 An example of a comment you would not want to discard would be something like `JSDocs` which provide `type annotations` for `JavaScript` functions. They can also act as documentation for libraries. That is, `function headers`. Stripping them away would remove the ability to read their documentation if served through a `binary`.
@@ -53,11 +67,11 @@ asdfasd /*
 asdfasd /* */ /* 
 */
  ```
- Among other likely combinations.
+Among other likely combinations.
 
- Starting the implementation, we can notice immediately that if I want to use the switch statement I will likely have to rewrite the `'/'` case. Which is fine, as it is the original `comment` case.
+Starting the implementation, we can notice immediately that if I want to use the switch statement I will likely have to rewrite the `'/'` case. Which is fine, as it is the original `comment` case.
 
- I think I will start by first doing a check for `*` after. This might not play nicely with the existing match for a `/n` and/or another `/`.
+I think I will start by first doing a check for `*` after. This might not play nicely with the existing match for a `/n` and/or another `/`.
 
 My solution is as follows:
 
@@ -96,3 +110,4 @@ case '/':
 
     break;
 ```
+I have not implemented nested comments.
