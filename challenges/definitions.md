@@ -93,7 +93,7 @@ WIP - Filling this in as best I can.
 * Syntax Tree - a type of tree that represents the syntax of a grammar.
 * Parse Tree - a type of Syntax Tree where all productions are represented as nodes in the tree.
 * Abstract Syntax Tree - a type of Syntax Tree where only needed productions are represented as nodes in the tree. [What's the difference between parse trees and abstract syntax trees (ASTs)?](https://stackoverflow.com/questions/5026517/whats-the-difference-between-parse-trees-and-abstract-syntax-trees-asts)
-* 
+* Visitor Pattern - 
 
 
 ## References

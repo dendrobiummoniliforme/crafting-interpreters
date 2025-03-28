@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "tryExample.visitorPattern.Main",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "tryExample.Main",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "challenge",
+            "request": "launch",
+            "mainClass": "challenge",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        },
+        {
+            "type": "java",
+            "name": "Lox",
+            "request": "launch",
+            "mainClass": "jlox.Lox",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        },
+        {
+            "type": "java",
+            "name": "GenerateAst",
+            "request": "launch",
+            "mainClass": "tool.GenerateAst",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        },
+        {
+            "type": "java",
+            "name": "try",
+            "request": "launch",
+            "mainClass": "try.Main",
+            "projectName": "crafting-interpreters-java_4274dad6"
+        }
+    ]
+}
